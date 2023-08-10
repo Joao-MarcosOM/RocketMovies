@@ -13,7 +13,7 @@ O RocketMovies é uma aplicação que permite que os usuários salvem em seu esp
 
 ## Capturas de Tela 📸
 
-![RocketMovies Screenshot 1](https://github.com/Joao-MarcosOM/RocketMovies/assets/70643779/5ffae9bb-a185-4d52-be76-962ac4341b2b.png)
+![127 0 0 1_5173_details_20 (1)](https://github.com/Joao-MarcosOM/RocketMovies/assets/70643779/1ba6560a-dac5-445b-95f4-1249bf4c2966)
 ![RocketMovies Screenshot 2](https://github.com/Joao-MarcosOM/RocketMovies/assets/70643779/29a497bc-f42a-4986-8604-b13a1d2e1676.png)
 
 ## Tecnologias Utilizadas 🛠️
@@ -40,6 +40,7 @@ npm install
 ```bash
 npm run dev
 ```
+## Redes 📸
 
 Desenvolvido por João Marcos Oliveira Melo 💼
 LinkedIn: https://www.linkedin.com/in/jo%C3%A3o-marcosom/ 📎
