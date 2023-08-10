@@ -13,7 +13,7 @@ O RocketMovies é uma aplicação que permite que os usuários salvem em seu esp
 
 ## Capturas de Tela 📸
 
-![127 0 0 1_5173_details_20 (1)](https://github.com/Joao-MarcosOM/RocketMovies/assets/70643779/1ba6560a-dac5-445b-95f4-1249bf4c2966)
+![127 0 0 1_5173_ (1)](https://github.com/Joao-MarcosOM/RocketMovies/assets/70643779/615111fb-07d6-4bb2-8342-281665a97df8)
 ![RocketMovies Screenshot 2](https://github.com/Joao-MarcosOM/RocketMovies/assets/70643779/29a497bc-f42a-4986-8604-b13a1d2e1676.png)
 
 ## Tecnologias Utilizadas 🛠️
