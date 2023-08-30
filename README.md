@@ -8,7 +8,7 @@ O RocketMovies é uma aplicação que permite que os usuários salvem em seu esp
 
 ## Recursos Principais 🎉
 
-- Pesquisa de Anotações de Filmes por Tag: Busque filmes por gênero.
+- Pesquisa de Anotações de Filmes por barra de pesquisa: Busque filmes por títulos.
 - Detalhes do Filme 🎬: Visualize informações detalhadas sobre um filme, como sinopse, notas, etc.
 
 ## Capturas de Tela 📸
