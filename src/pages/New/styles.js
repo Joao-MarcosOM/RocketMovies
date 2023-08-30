@@ -43,7 +43,7 @@ export const Form = styled.form`
 
         margin-bottom: 36px;
         
-        a{
+        button{
             display: flex;
             align-items: center;
             justify-content: center;

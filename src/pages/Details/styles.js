@@ -14,7 +14,7 @@ export const Container = styled.div`
         grid-area: content;
         padding-top: 64px;
         
-        a{
+        button{
             display: flex;
             gap: 8px;
             color: ${({theme }) =>  theme.COLORS.PINK};
@@ -64,10 +64,12 @@ export const Content = styled.div`
 
      > p{
         margin-top: 40px;
-        height: 336px;
+        height: 250px;
         text-align: justify;
 
      }
+
+     
 `;
 
 

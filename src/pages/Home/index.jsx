@@ -10,9 +10,40 @@ import {Note} from "../../components/Note"
 import {Tag} from "../../components/Tag"
 import { Button } from "../../components/Button"
 
-import { Link } from "react-router-dom";
+import { Link , useNavigate } from "react-router-dom";
+
+import { useState , useEffect} from "react";
+
+import { api } from "../../services/api";
+
+import { useAuth } from "../../hooks/auth"
+
 
 export function Home(){
+    const [tagsSelected, setTagsSelected] = useState([]);
+    const [notes, setNotes] = useState([]);
+    const {user} = useAuth();
+
+    
+    const { search } = useAuth();
+
+    const navigate = useNavigate();
+
+    function handleDetails(id){
+        navigate(`/details/${id}`)
+    }
+
+
+    useEffect(() =>{
+        async function fetchNotes(){
+            const response = await api.get(`/movies?title=${search}&user_id=${user.id}&tags=${tagsSelected}`);
+            setNotes(response.data);
+            
+        }
+
+        fetchNotes()
+    }, [search]); //Quando mudar o conteúdo do tagsSelected ou do search, automaticamente ele vai executar o useEffect
+
     return(
         <Container>
             <Header />
@@ -26,9 +57,11 @@ export function Home(){
             </div>
 
             <Content>
-                <Note data={{title: 'Interestellar', description: "Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se comunicar com ela. Pai e filha descobrem que o é uma inteligência desconhecida que está enviando mensagens codificadas através de radiação gravitacional, deixando coordenadas em binário que os levam até uma instalação secreta da NASA liderada pelo professor John Brand. O cientista revela que um buraco de minhoca foi aberto perto de Saturno e que ele leva a planetas que podem oferecer condições de sobrevivência para a espécie humana. As ", tags: [{id: '1', name: "Ficção Científica"}, {id: '2', name: 'Drama'},{id: '3', name: 'Família'}]}}/>
-                <Note data={{title: 'Interestellar', description: "Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se comunicar com ela. Pai e filha descobrem que o é uma inteligência desconhecida que está enviando mensagens codificadas através de radiação gravitacional, deixando coordenadas em binário que os levam até uma instalação secreta da NASA liderada pelo professor John Brand. O cientista revela que um buraco de minhoca foi aberto perto de Saturno e que ele leva a planetas que podem oferecer condições de sobrevivência para a espécie humana. As ", tags: [{id: '1', name: "Ficção Científica"}, {id: '2', name: 'Drama'},{id: '3', name: 'Família'}]}}/>
-                <Note data={{title: 'Interestellar', description: "Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se comunicar com ela. Pai e filha descobrem que o é uma inteligência desconhecida que está enviando mensagens codificadas através de radiação gravitacional, deixando coordenadas em binário que os levam até uma instalação secreta da NASA liderada pelo professor John Brand. O cientista revela que um buraco de minhoca foi aberto perto de Saturno e que ele leva a planetas que podem oferecer condições de sobrevivência para a espécie humana. As ", tags: [{id: '1', name: "Ficção Científica"}, {id: '2', name: 'Drama'},{id: '3', name: 'Família'}]}}/>
+                {   
+                    notes &&
+                    notes.map(note => (<Note key={String(note.id)} data={note} onClick={() => handleDetails(note.id)}/>))
+                    
+                } 
             </Content>
 
         </Container>

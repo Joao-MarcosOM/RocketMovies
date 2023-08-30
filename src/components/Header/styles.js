@@ -28,6 +28,12 @@ export const Container = styled.header`
         height: 56px;
     }
 
+    > button{
+        position: absolute;
+        margin-top: 50px;
+        margin-left: 950px;
+    }
+
 `;
 
 export const Profile = styled(Link)`
